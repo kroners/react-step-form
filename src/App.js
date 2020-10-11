@@ -1,14 +1,15 @@
-import React from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
-import './App.css';
-import UserForm from './components/UserForm';
+import React from 'react'
+import Dialog from '@material-ui/core/Dialog'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { green } from '@material-ui/core/colors'
+import './App.css'
+import UserForm from './components/UserForm'
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: green[400]
-    }
+      main: green[400],
+    },
   },
   spacing: 4,
 })
@@ -18,10 +19,12 @@ function App() {
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>
-        <UserForm />
+        <Dialog open fullWidth maxWidth="md">
+          <UserForm />
+        </Dialog>
       </MuiThemeProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
