@@ -10,6 +10,11 @@ export class FormUserDetails extends Component {
         e.preventDefault()
         this.props.nextStep()
     }
+
+    back = e => {
+        e.preventDefault()
+        this.props.prevStep()
+    }
     
     render() {
         const theme = createMuiTheme();
@@ -22,34 +27,38 @@ export class FormUserDetails extends Component {
                         fullWidth
                         maxWidth='sm'
                     >
-                        <AppBar title="Enter user details" />
+                        <AppBar title="Enter your personal details" />
                         <TextField
-                            placeholder="Enter your first name"
-                            label="First name"
-                            onChange={handleChange('firstName')}
-                            defaultValue={values.firstName}
+                            placeholder="Enter your occupation"
+                            label="Occupation"
+                            onChange={handleChange('occupation')}
+                            defaultValue={values.occupation}
                             margin="normal"
                             fullWidth
                             />
                         <br/>
                         <TextField
-                            placeholder="Enter your last name"
-                            label="Last name"
-                            onChange={handleChange('lastName')}
-                            defaultValue={values.lastName}
+                            placeholder="Enter your city"
+                            label="City"
+                            onChange={handleChange('city')}
+                            defaultValue={values.city}
                             margin="normal"
                             fullWidth
                             />
                         <br/>
                         <TextField
-                            placeholder="Enter your email"
-                            label="Email"
-                            onChange={handleChange('email')}
-                            defaultValue={values.email}
+                            placeholder="Enter your bio"
+                            label="Bio"
+                            onChange={handleChange('bio')}
+                            defaultValue={values.bio}
                             margin="normal"
                             fullWidth
                             />
                         <br/>
+                        <Button
+                            variant="contained"
+                            onClick={this.back}
+                        >Back</Button>
                         <Button
                             color="primary"
                             variant="contained"
