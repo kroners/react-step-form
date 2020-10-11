@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'; 
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import TextField from '@material-ui/core/TextField';
@@ -17,10 +16,8 @@ export class FormUserDetails extends Component {
     }
     
     render() {
-        const theme = createMuiTheme();
         const { values, handleChange } = this.props 
         return (
-            <MuiThemeProvider theme={theme}>
                 <>
                     <Dialog
                         open
@@ -66,7 +63,6 @@ export class FormUserDetails extends Component {
                         >Continue</Button>
                     </Dialog>
                 </>
-            </MuiThemeProvider>
         )
     }
 }
